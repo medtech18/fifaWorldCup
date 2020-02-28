@@ -1,0 +1,24 @@
+--------------------------------------------------------
+--  File created - Sunday-December-24-2017   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table RANKING
+--------------------------------------------------------
+
+  CREATE TABLE "WORLDCUPBACKUP"."RANKING" 
+   (	"ID" NUMBER(37,0), 
+	"NOM" VARCHAR2(50 BYTE), 
+	"TEAMCAT" VARCHAR2(50 BYTE), 
+	"FLAG" VARCHAR2(50 BYTE), 
+	"WIN" NUMBER(20,0), 
+	"LOSE" NUMBER(20,0), 
+	"DRAW" NUMBER(20,0), 
+	"GFORWARD" NUMBER(20,0), 
+	"GACCEPT" NUMBER(20,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into WORLDCUPBACKUP.RANKING
+SET DEFINE OFF;

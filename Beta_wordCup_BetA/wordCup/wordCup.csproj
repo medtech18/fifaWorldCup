@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5514726-7E7A-4247-8511-007B33CAA730}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>wordCup</RootNamespace>
+    <AssemblyName>wordCup</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="SplashScreen, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SplashScreen.Winforms.1.0.0\lib\SplashScreen.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuildConnection.cs" />
+    <Compile Include="Equipe.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rankings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rankings.Designer.cs">
+      <DependentUpon>Rankings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="scheduling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="scheduling.Designer.cs">
+      <DependentUpon>scheduling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TreeFinal.Designer.cs">
+      <DependentUpon>TreeFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Win.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Win.Designer.cs">
+      <DependentUpon>Win.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Rankings.resx">
+      <DependentUpon>Rankings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="scheduling.resx">
+      <DependentUpon>scheduling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeFinal.resx">
+      <DependentUpon>TreeFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Win.resx">
+      <DependentUpon>Win.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brazil.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colombia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\egypt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nether.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\port.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fifa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\den.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\egy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\esp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\irn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jpn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ksa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\por.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\srb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\swe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\per.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\isl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\col.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainBackGround.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainBackGroundX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scheduling.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SCSCSCJPG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FINALSC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bra1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\col1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cro1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\den1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\egy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eng1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\esp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fra1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ger1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\irn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\isl1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jpn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kor1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ksa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mex1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nga1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pan1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\per1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pol1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\por1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\srb1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sui1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\swe1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tun1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uru1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fifa1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\incrementsSChedulinh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rankings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treeFinal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A.Saoudite.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Allemagne.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angleterre.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Argentine.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Australie.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Belgique.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bresil.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Colombia.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CostaRica.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Croatie.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cup.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cup-Recovered.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Danemark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Egypte.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Espagne.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\France.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iran.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Islande.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Japon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KoreaRep.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maroc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mexique.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nigeria.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Panama.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perou.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Poland.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Russie.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Senegal.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Serbia.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Suede.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Suisse.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tunisie.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Uruguay.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoadingAnim.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sch.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sch1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blanc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nextStep.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nextStep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\winner.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
